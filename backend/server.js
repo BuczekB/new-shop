@@ -2,6 +2,8 @@ require('dotenv').config()
 const express = require('express');
 const mongoose = require('mongoose');
 const Product = require('./models/productModel')
+const cors = require('cors')
+
 
 const PORT = process.env.PORT || 3000
 const MONGO_URL = process.env.MONGO_URL
@@ -9,6 +11,12 @@ const MONGO_URL = process.env.MONGO_URL
 const app = express();
 
 app.use(express.json())
+
+app.use(
+    cors({
+        origin: "*"
+    })
+)
 
 app.get('/products', async (req, res) =>{
     try{
@@ -32,7 +40,7 @@ mongoose.
 connect(MONGO_URL)
 .then(() =>{
     app.listen(PORT, () =>{
-        console.log('backend is running on port 3000');
+        console.log(`backend is running on port ${PORT}`);
     })
 }).catch((error) =>{
     console.log(error);

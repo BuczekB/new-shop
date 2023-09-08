@@ -1,5 +1,5 @@
 
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 
 import axios from 'axios'
 import { useEffect } from 'react'
@@ -9,29 +9,29 @@ const FetchData = () =>{
 
     
     const dispatch = useDispatch()
+    const products = useSelector((state) => state.allProducts.products)
 
     const getData = async () =>{
        
-        const response = axios
+        const response = await axios
         .get('http://localhost:3000/products')
-        .then(() =>{
-            console.log(response.data);
-        })
        .catch((err) =>{
             console.log('err', err);
         })
         dispatch(setProducts(response))
-        console.log(response.data);
+      
     }
-
+    
+ 
+  
 
     useEffect(() =>{
         getData()
     },[])
 
      return(
-        <>
-        </>
+        <div>
+        </div>
      )
 }
 

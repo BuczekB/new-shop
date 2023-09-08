@@ -1,14 +1,13 @@
 
 import './App.css'
 
-import FetchData from './container/FetchData'
+import FetchData from './container/FetchData.jsx'
 
 function App() {
 
   return (
     <>
     <FetchData></FetchData>
-      <h1>Test</h1>
     </>
   )
 }

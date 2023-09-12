@@ -1,0 +1,24 @@
+.card{
+    width: 20vw;
+    height: auto;
+    padding: 1rem;
+    background-color: antiquewhite;
+    margin: 1rem 0;
+    color: black;
+
+    .imageBox{
+        
+       
+        img{
+            width: 18vw;
+            height: 18vh;
+            background-size: cover;
+        }
+       
+    }
+
+    .buyButton{
+        width: 10rem;
+        height: 3rem;
+    }
+}

@@ -13,7 +13,7 @@ import Contact from './container/Contact'
 function App() {
 
   return (
-    <>
+    <div className='app'>
    <Router>
    <Navigation></Navigation>
     <Routes>
@@ -25,7 +25,7 @@ function App() {
     </Routes>
     <FetchData></FetchData>
    </Router>
-    </>
+    </div>
   )
 }
 

@@ -9,14 +9,13 @@ function Shop() {
 
     const products = useSelector((state) => state.allProducts.products.data)
 
+
+   
    const listOfProducts = products.map((item) =>{
     return(
       <Card key={item._id} name={item.name} price={item.price} image={item.image}/>
     )
    })
-
-   console.log(products, 'test');
-
    
 
     return (

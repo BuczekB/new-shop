@@ -11,6 +11,7 @@ function Navigation() {
         <Link to='/About'><li>About</li></Link>
         <Link to='/Shop'><li>Shop</li></Link>
         <Link to='/Contact'><li>Contact</li></Link>
+        <Link to='/Cart'><li>Cart</li></Link>
        </ul>
     </nav>
   )

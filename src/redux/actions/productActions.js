@@ -15,3 +15,10 @@ export const selectedProduct = (product) =>{
     }
 }
 
+export const addToCart = (cart) =>{
+    return{
+        type: ActionTypes.ADD_TO_CART,
+        payload: cart
+    }
+}
+

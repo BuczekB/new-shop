@@ -1,7 +1,8 @@
 import { ActionTypes } from "../contants/action-types";
 
 const initialState = {
-    products:[]
+    products:[],
+    cart: []
 }
 
 
@@ -25,6 +26,24 @@ export const selectedProductReducer = (state = {}, {type, payload}) =>{
         case ActionTypes.SELECTED_PRODUCT:
 
         return{...state, ...payload}
+
+        default:
+            return state
+    }
+
+}
+
+
+export const addToCart = (state = initialState, {type, payload}) =>{
+
+    switch(type){
+        case ActionTypes.ADD_TO_CART:
+
+   
+
+        return{
+            ...state,
+             cart: [payload, ...state.cart]}
 
         default:
             return state

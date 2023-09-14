@@ -10,7 +10,7 @@ function Navigation() {
        <ul>
         <Link to='/About'><li>About</li></Link>
         <Link to='/Shop'><li>Shop</li></Link>
-        <Link to='/Contact'><li>Contact</li></Link>
+        <Link to='/Admin'><li>Admin</li></Link>
         <Link to='/Cart'><li>Cart</li></Link>
        </ul>
     </nav>

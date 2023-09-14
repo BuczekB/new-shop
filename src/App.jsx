@@ -8,7 +8,7 @@ import Navigation from './container/Navigation'
 
 import About from './container/About'
 import Shop from './container/Shop'
-import Contact from './container/Contact'
+import Admin from './container/Admin'
 import Cart from './container/Cart'
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
     <Route path='/' exact element={<About/>} />
     <Route path='/About' exact element={<About/>} />
     <Route path='/Shop' exact element={<Shop/>} />
-    <Route path='/Contact' exact element={<Contact/>} />
+    <Route path='/Admin' exact element={<Admin/>} />
     <Route path='/Cart' exact element={<Cart/>} />
     <Route>404 Not Found</Route>
     </Routes>

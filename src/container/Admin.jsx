@@ -1,7 +1,12 @@
 
 import {useState} from 'react'
+import { useDispatch } from 'react-redux'
+import { setProducts } from '../redux/actions/productActions'
+import axios from 'axios'
 
 function Admin() {
+
+  const dispatch = useDispatch()
 
   const [newItem, setNewItem] = useState({
     name: "",
@@ -21,7 +26,20 @@ function Admin() {
   
   const addNewItem = (e) =>{
     e.preventDefault()
-console.log(newItem);
+
+    if(newItem.name != ''){
+      axios.post('http://localhost:3000/product', {
+        "name": newItem.name,
+        "quantity": 1,
+        "price": newItem.price,
+        "image": newItem.image
+      })
+      .then(response => console.log(response))
+      .catch((err) =>{
+        console.log(err);
+      })
+    }
+    
   }
 
 

@@ -21,7 +21,7 @@ function Cart() {
 
     return (
       <div className='cart'>
-{cartBox}
+        {cartBox}
       </div>
     )
   }

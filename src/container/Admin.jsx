@@ -1,7 +1,7 @@
 
 import {useState} from 'react'
 import { useDispatch } from 'react-redux'
-import { setProducts } from '../redux/actions/productActions'
+import { addProduct } from '../redux/actions/productActions'
 import axios from 'axios'
 
 function Admin() {
@@ -34,7 +34,12 @@ function Admin() {
         "price": newItem.price,
         "image": newItem.image
       })
-      .then(response => console.log(response))
+      .then(dispatch(addProduct({
+        "name": newItem.name,
+        "quantity": 1,
+        "price": newItem.price,
+        "image": newItem.image
+      })))
       .catch((err) =>{
         console.log(err);
       })

@@ -8,6 +8,13 @@ export const setProducts = (products) =>{
     }
 }
 
+export const addProduct = (products) =>{
+    return{
+        type: ActionTypes.ADD_PRODUCT,
+        payload: products
+    }
+}
+
 export const selectedProduct = (product) =>{
     return{
         type: ActionTypes.SELECTED_PRODUCT,

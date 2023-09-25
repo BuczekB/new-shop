@@ -18,7 +18,8 @@ const FetchData = () =>{
        .catch((err) =>{
             console.log('err', err);
         })
-        dispatch(setProducts(response))
+        dispatch(setProducts(response.data))
+        console.log(response.data, 'response');
       
     }
     

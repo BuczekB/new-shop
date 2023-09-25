@@ -13,11 +13,25 @@ export const productReducer = (state = initialState, {type, payload}) =>{
 
         return{...state, products:payload}
 
+        case ActionTypes.ADD_PRODUCT:
+
+        return{
+            ...state,
+            products:[payload, ...state.products]
+        }
+
+
         default:
             return state
     }
 
 }
+
+
+
+
+
+
 
 
 export const selectedProductReducer = (state = {}, {type, payload}) =>{

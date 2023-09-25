@@ -36,6 +36,20 @@ app.post('/product' , async (req, res) =>{
     }
 })
 
+
+app.delete('/product/:id' , async (req, res) =>{
+    try{
+        const {id} = req.params
+        const product = await Product.findByIdAndDelete(id)
+        if(!product){
+            return res.status(404).json({message: `cannot fint any product with ID ${id}`})
+        }
+        res.status(200).json(product)
+    }catch(error){
+        res.status(500).json({message: error.message})
+    }
+})
+
 mongoose.
 connect(MONGO_URL)
 .then(() =>{

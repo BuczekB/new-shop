@@ -17,7 +17,7 @@ function Shop() {
    
     const listOfProducts =  products.map( (item) =>{
       return(
-        <Card key={item._id} name={item.name} price={item.price} image={item.image}/>
+        <Card key={item._id} id={item._id} name={item.name} price={item.price} image={item.image}/>
       )
      })
 

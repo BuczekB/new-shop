@@ -27,6 +27,10 @@ function Admin() {
   const addNewItem = (e) =>{
     e.preventDefault()
 
+
+
+   
+
     if(newItem.name != ''){
       axios.post('http://localhost:3000/product', {
         "name": newItem.name,

@@ -1,11 +1,13 @@
 
 import {useDispatch, useSelector} from 'react-redux'
-import { addToCart } from '../redux/actions/productActions'
+import { addToCart, deleteProduct } from '../redux/actions/productActions'
+
+import axios from 'axios'
 
 import '../Style/Card.scss'
 
 
-function Card({name, price, image}) {
+function Card({name, price, image, id}) {
 
     
 const dispatch = useDispatch()
@@ -15,6 +17,15 @@ const cartItems = useSelector((state) => state.allProducts.cart)
 const buyItem = () =>{
     dispatch(addToCart({name, price, image}))
   
+}
+
+const removeItem = () =>{
+  
+  console.log(id);
+
+  dispatch(deleteProduct({id}))
+
+  axios.delete(`http://localhost:3000/product/${id}`)
 }
 
 
@@ -29,6 +40,7 @@ const buyItem = () =>{
         <h1 className='card-header'>{name}</h1>     
         <h2  className='card-price'>Price: {price}$</h2>    
         <button onClick={buyItem}  className='buyButton'>Buy</button>
+        <button onClick={removeItem}  className='buyButton'>Remove</button>
        
       </div>
     )

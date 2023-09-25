@@ -1,5 +1,5 @@
 
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 
 import axios from 'axios'
 import { useEffect } from 'react'
@@ -9,6 +9,9 @@ const FetchData = () =>{
 
     
     const dispatch = useDispatch()
+    const products =  useSelector((state) => state.allProducts.products)
+
+    
   
 
     const getData = async () =>{
@@ -28,7 +31,7 @@ const FetchData = () =>{
 
     useEffect(() =>{
         getData()
-    },[])
+    },[products.length])
 
      return(
         <div>

@@ -15,6 +15,13 @@ export const addProduct = (products) =>{
     }
 }
 
+export const deleteProduct = (products) =>{
+    return{
+        type: ActionTypes.DELETE_PRODUCT,
+        payload: products
+    }
+}
+
 export const selectedProduct = (product) =>{
     return{
         type: ActionTypes.SELECTED_PRODUCT,

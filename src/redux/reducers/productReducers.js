@@ -20,6 +20,19 @@ export const productReducer = (state = initialState, {type, payload}) =>{
             products:[payload, ...state.products]
         }
 
+        case ActionTypes.DELETE_PRODUCT:
+
+
+       
+        const allItemst = state.products
+        const newListOfItems = allItemst.filter((element) => !element._id.includes(payload.id))
+
+
+        return{
+            ...state,
+            products:newListOfItems
+        }
+
 
         default:
             return state

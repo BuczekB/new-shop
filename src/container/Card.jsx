@@ -1,10 +1,11 @@
-
+import { useState, useEffect } from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { addToCart, deleteProduct } from '../redux/actions/productActions'
 
 import axios from 'axios'
 
 import '../Style/Card.scss'
+import { useFetcher } from 'react-router-dom'
 
 
 function Card({name, price, image, id}) {
@@ -12,6 +13,16 @@ function Card({name, price, image, id}) {
     
 const dispatch = useDispatch()
 const cartItems = useSelector((state) => state.allProducts.cart)
+const isOnline = useSelector((state) => state.isAdminLogged.isLogged)
+
+
+const [isVisible, setIsVisible] = useState()
+
+
+
+useEffect(() =>{
+  setIsVisible(isOnline)
+},[isOnline])
 
 
 const buyItem = () =>{
@@ -20,9 +31,6 @@ const buyItem = () =>{
 }
 
 const removeItem = () =>{
-  
-  console.log(id);
-
   dispatch(deleteProduct({id}))
 
   axios.delete(`http://localhost:3000/product/${id}`)
@@ -41,7 +49,7 @@ const removeItem = () =>{
         <h2  className='card-price'>Price: {price}$</h2>    
        <div className='buttonBox'>
        <button onClick={buyItem}  className='buyButton'>Buy</button>
-       <button onClick={removeItem}  className='buyButton'>Remove</button>
+       <button onClick={removeItem}  className={isVisible? 'buyButton' : 'buttonOff'}>Remove</button>
        </div>
        
       </div>

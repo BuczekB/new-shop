@@ -10,10 +10,10 @@ nav{
         list-style: none;
 
         .buttonOn{
-            display: none;
+            display: flex;
         }
         .buttonOff{
-            display: flex;
+            display: none;
         }
     }
 }

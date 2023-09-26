@@ -35,7 +35,7 @@ function Navigation() {
         <Link to='/Shop'><li>Shop</li></Link>
         <Link to='/Admin'><li>Admin</li></Link>
         <Link to='/Cart'><li>Cart</li></Link>
-        <button onClick={logOut} className={isOnline? 'buttonOff' : 'buttonOn'}>Log Out</button>
+        <button onClick={logOut} className={isOnline? 'buttonOn' : 'buttonOff'}>Log Out</button>
        </ul>
     </nav>
   )

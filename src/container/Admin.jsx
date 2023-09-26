@@ -4,9 +4,12 @@ import { useDispatch } from 'react-redux'
 import { addProduct } from '../redux/actions/productActions'
 import axios from 'axios'
 
+
+
 function Admin() {
 
   const dispatch = useDispatch()
+  
 
   const [newItem, setNewItem] = useState({
     name: "",
@@ -54,7 +57,6 @@ function Admin() {
 
     return (
       <div>
-
       <form>
         <h1>New Product</h1>         
         <div>

@@ -39,8 +39,10 @@ const removeItem = () =>{
         </div>    
         <h1 className='card-header'>{name}</h1>     
         <h2  className='card-price'>Price: {price}$</h2>    
-        <button onClick={buyItem}  className='buyButton'>Buy</button>
-        <button onClick={removeItem}  className='buyButton'>Remove</button>
+       <div className='buttonBox'>
+       <button onClick={buyItem}  className='buyButton'>Buy</button>
+       <button onClick={removeItem}  className='buyButton'>Remove</button>
+       </div>
        
       </div>
     )

@@ -36,3 +36,10 @@ export const addToCart = (cart) =>{
     }
 }
 
+export const isAdminLogged = (payload) =>{
+    return{
+        type: ActionTypes.IS_ADMIN_LOGGED,
+        payload: payload
+    }
+}
+

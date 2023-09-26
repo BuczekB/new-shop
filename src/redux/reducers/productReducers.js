@@ -2,7 +2,8 @@ import { ActionTypes } from "../contants/action-types";
 
 const initialState = {
     products:[],
-    cart: []
+    cart: [],
+    isLogged: false
 }
 
 
@@ -71,6 +72,25 @@ export const addToCart = (state = initialState, {type, payload}) =>{
         return{
             ...state,
              cart: [payload, ...state.cart]}
+
+        default:
+            return state
+    }
+
+}
+
+
+export const isAdminLogged = (state = initialState, {type, payload = false}) =>{
+
+    switch(type){
+        case ActionTypes.IS_ADMIN_LOGGED:
+
+  
+
+        return{
+            ...state,
+             isLogged: payload 
+            }
 
         default:
             return state

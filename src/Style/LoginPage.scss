@@ -40,6 +40,9 @@
             margin: 6px 0;
             color: black;
         }
+        input[type=text]:focus {
+            background-color: transparent;
+          }
     }
 
 

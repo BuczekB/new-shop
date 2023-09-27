@@ -5,6 +5,8 @@ import { addProduct } from '../redux/actions/productActions'
 import axios from 'axios'
 
 
+import '../Style/Admin.scss'
+
 
 function Admin() {
 
@@ -56,23 +58,21 @@ function Admin() {
 
 
     return (
-      <div>
-      <form>
-        <h1>New Product</h1>         
-        <div>
+      <div className='adminContainer'>
+        <h1>Add New Product</h1>         
+        <div className='inputBox'>
         <label type="text"  >Name</label>
-        <input className="nameBox" name="name" onChange={handleChaneg}></input>
+        <input type='text' className="nameBox" name="name" onChange={handleChaneg}></input>
         </div>
-        <div>
+        <div className='inputBox'>
         <label type="number">Price</label>
-        <input className="Price"  name="price" onChange={handleChaneg}></input>
+        <input type='text' className="Price"  name="price" onChange={handleChaneg}></input>
         </div>
-        <div>
+        <div className='inputBox'>
         <label type="text" >Image</label>
-        <input className="Image" name="image" onChange={handleChaneg}></input>
+        <input type='text' className="Image" name="image" onChange={handleChaneg}></input>
         </div>
-        <button type="submit" onClick={addNewItem} >Add Product</button>
-      </form>  
+        <button className='addButton' type="submit" onClick={addNewItem} >Add Product</button>
       </div>
     )
   }

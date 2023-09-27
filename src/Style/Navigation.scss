@@ -3,17 +3,53 @@ nav{
     top: 0;
     left: 0;
     width: 100vw;
+    background-color: rgba(255, 255, 255, 0.99);
+
+
+    span{
+        color: black;
+        font-weight: bold;
+        font-size: 24px;
+    }
 
     ul{
         display: flex;
         justify-content: space-around;
+        align-items: center;
         list-style: none;
 
-        .buttonOn{
-            display: flex;
+        .navItem{
+            color: black;
+            font-size: larger;
         }
+
+        a{
+            text-decoration: none;
+        }
+
+        .buttonOn{
+            min-width: 120px;
+            min-height: 40px;
+            border-radius: 5px;
+            font-size: 18px;
+            border: none;
+            box-shadow: 1px 1px 5px rgba(158, 0, 0, 0.705);
+            background-color: rgba(158, 0, 0, 0.705);
+            color: white;
+            transition: ease-in-out .3s;
+        }
+
+        .buttonOn:hover{
+            cursor: pointer;
+            text-shadow: 1px 1px 1px black;
+            box-shadow: 1px 1px 5px rgba(158, 0, 0, 0.9);
+            background-color: rgba(158, 0, 0, 0.9);
+           }
         .buttonOff{
             display: none;
         }
+
+
+        
     }
 }

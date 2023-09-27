@@ -31,10 +31,11 @@ function Navigation() {
   return (
     <nav>
        <ul>
-        <Link to='/About'><li>About</li></Link>
-        <Link to='/Shop'><li>Shop</li></Link>
-        <Link to='/Admin'><li>Admin</li></Link>
-        <Link to='/Cart'><li>Cart</li></Link>
+        <span>Fake Shop</span>
+        <Link to='/About'><li className='navItem'>About</li></Link>
+        <Link to='/Shop'><li className='navItem'>Shop</li></Link>
+        <Link to='/Admin'><li className='navItem'>Admin</li></Link>
+        <Link to='/Cart'><li className='navItem'>Cart</li></Link>
         <button onClick={logOut} className={isOnline? 'buttonOn' : 'buttonOff'}>Log Out</button>
        </ul>
     </nav>

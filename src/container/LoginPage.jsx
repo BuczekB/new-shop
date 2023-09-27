@@ -69,11 +69,11 @@ const signIn = (e) =>{
         </div>
             <div className="loginBox">
                 <label type='text'>Login</label>
-                <input className="loginInput" name="login" onChange={handleLogin}></input>
+                <input type='text' className="loginInput" name="login" onChange={handleLogin}></input>
             </div>
             <div className="loginBox">
                 <label type='text'>Password</label>
-                <input type='password' className="passwordInput" name="password" onChange={handleLogin}></input>
+                <input  type='password' className="passwordInput" name="password" onChange={handleLogin}></input>
             </div>
             <button className='loginButton' onClick={signIn}>Log In</button>
       </div>

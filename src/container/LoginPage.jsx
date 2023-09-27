@@ -6,6 +6,7 @@ import { isAdminLogged } from '../redux/actions/productActions'
 
 import {useNavigate} from 'react-router-dom'
 
+import '../Style/LoginPage.scss'
 
 function LoginPage() {
 
@@ -15,6 +16,7 @@ function LoginPage() {
     const isOnline = useSelector((state) => state.isAdminLogged.isLogged)
     const dispatch = useDispatch()
 
+  
 
 
     const navigate = useNavigate()
@@ -24,7 +26,7 @@ const [log, setLog] = useState({
     password: ''
 })
 
-console.log(isOnline);
+
 
 useEffect(() =>{
     if(isOnline){
@@ -49,7 +51,7 @@ const signIn = (e) =>{
   
 
 
-    if(log.login === 'admin123' || log.password === 'admin123'){
+    if(log.login === LOGIN || log.password === PASSWORD){
         dispatch(isAdminLogged(true))
         navigate('/AdminLogged')
     }else{
@@ -61,15 +63,19 @@ const signIn = (e) =>{
 
     return (
       <div className='loginPage'>
+        <div className='header'>
+        <h1>Log In As Administrator</h1>
+        <h2>For New Permissions</h2>
+        </div>
             <div className="loginBox">
                 <label type='text'>Login</label>
                 <input className="loginInput" name="login" onChange={handleLogin}></input>
             </div>
-            <div className="passwordInput">
+            <div className="loginBox">
                 <label type='text'>Password</label>
-                <input className="passwordInput" name="password" onChange={handleLogin}></input>
+                <input type='password' className="passwordInput" name="password" onChange={handleLogin}></input>
             </div>
-            <button onClick={signIn}>Sign In</button>
+            <button className='loginButton' onClick={signIn}>Log In</button>
       </div>
     )
   }

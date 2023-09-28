@@ -11,11 +11,12 @@ function ItemInCart({name, price, image}) {
     return (
       <div className='itemInCart'>
          <img src={image} alt=''></img>  
-        <h2>Name: {name}</h2>
-        <h2>Price: {price}</h2>
+         <p>Quantity: {1}</p>
+         <p>Price: {price}</p>
+         <p>Total: {price}</p>
       </div>
     )
   }
   
   export default ItemInCart
-  
+ 

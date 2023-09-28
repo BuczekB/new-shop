@@ -48,7 +48,7 @@ const removeItem = () =>{
         <h1 className='card-header'>{name}</h1>     
         <h2  className='card-price'>Price: {price}$</h2>    
        <div className='buttonBox'>
-       <button onClick={buyItem}  className='buyButton'>Buy</button>
+       <button onClick={buyItem}  className='buyButton'>Add to cart</button>
        <button onClick={removeItem}  className={isVisible? 'buyButton' : 'buttonOff'}>Remove</button>
        </div>
        

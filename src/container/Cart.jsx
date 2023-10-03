@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux/es/hooks/useSelector'
 
 import '../Style/Cart.scss'
@@ -19,15 +19,18 @@ function Cart() {
     })
 
 
-    const summaryPrice = summaryArray.reduce((total , amount) => total + amount)
+    const summaryPrice = summaryArray.reduce((total , amount) => total + amount, 0)
+
+   
     
     
 
     const cartBox = cartProduct.map((item) =>{
 
      
+
       return(
-       <ItemInCart key={item.name} name={item.name} price={item.price} image={item.image}>
+       <ItemInCart key={item.name} name={item.name} price={item.price} image={item.image} id={item.id} quantity={item.quantity}>
        </ItemInCart>
       )
     })
@@ -48,7 +51,7 @@ function Cart() {
               <p>Price</p>
               <p>Total</p>
             </div>
-          {cartBox.length? cartBox : <h1>Cart is empty</h1>}
+          {cartBox.length? cartBox : <p className='noItems'>Cart is empty</p>}
           </div>
        </div>
        <div className='summaryBox'>

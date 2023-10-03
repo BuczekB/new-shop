@@ -8,7 +8,7 @@ import '../Style/Card.scss'
 import { useFetcher } from 'react-router-dom'
 
 
-function Card({name, price, image, id}) {
+function Card({name, price, image, id, quantity}) {
 
     
 const dispatch = useDispatch()
@@ -26,7 +26,10 @@ useEffect(() =>{
 
 
 const buyItem = () =>{
-    dispatch(addToCart({name, price, image}))
+
+  
+
+    dispatch(addToCart({name, price, image, id, quantity}))
   
 }
 

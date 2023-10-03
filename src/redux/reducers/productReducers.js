@@ -67,11 +67,34 @@ export const addToCart = (state = initialState, {type, payload}) =>{
     switch(type){
         case ActionTypes.ADD_TO_CART:
 
-   
+        
 
-        return{
-            ...state,
-             cart: [payload, ...state.cart]}
+        const itemIds = state.cart.map((item) =>{
+           return( item.id)
+        })
+
+        console.log(itemIds);
+
+        if(itemIds.includes(payload.id)){
+           const fintItem = state.cart.findIndex((item) => item.id === payload.id)
+
+           
+           console.log(fintItem);
+
+          state.cart[fintItem].quantity += 1
+
+          return{
+            ...state
+          }
+        } else{
+            return{
+                ...state,
+                 cart: [payload, ...state.cart]}
+        }
+
+      
+
+     
 
         default:
             return state

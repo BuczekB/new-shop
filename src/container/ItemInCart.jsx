@@ -1,11 +1,13 @@
 
-
+import { useDispatch } from 'react-redux'
 import { useState } from 'react'
 import '../Style/ItemInCart.scss'
+import {addQuantity, substractQuantity} from '../redux/actions/productActions'
 
 
-function ItemInCart({name, price, image, quantity}) {
+function ItemInCart({name, price, image, quantity, id}) {
 
+  const dispatch = useDispatch()
 
   const [quantityOfItem, setQuantity] = useState(quantity)
 
@@ -14,12 +16,14 @@ function ItemInCart({name, price, image, quantity}) {
     switch(e.target.className){
       case "+":
         setQuantity(quantityOfItem + 1)
+        dispatch(addQuantity(id))
       break;
       case "-":
        if(!quantityOfItem ){
         return;
        }
        setQuantity(quantityOfItem - 1)
+       dispatch(substractQuantity(id))
       break;
 
       default:
@@ -28,6 +32,7 @@ function ItemInCart({name, price, image, quantity}) {
    
    }
 
+  
     return (
       <div className='itemInCart'>
         <div>

@@ -43,3 +43,20 @@ export const isAdminLogged = (payload) =>{
     }
 }
 
+export const addQuantity = (payload) =>{
+    return{
+        type: ActionTypes.ADD_QUANTITY,
+        payload: payload
+    }
+}
+
+export const substractQuantity = (payload) =>{
+    return{
+        type: ActionTypes.SUBSTRACT_QUANTITY,
+        payload: payload
+    }
+}
+
+
+
+

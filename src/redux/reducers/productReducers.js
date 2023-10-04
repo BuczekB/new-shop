@@ -68,18 +68,15 @@ export const addToCart = (state = initialState, {type, payload}) =>{
         case ActionTypes.ADD_TO_CART:
 
         
-
         const itemIds = state.cart.map((item) =>{
            return( item.id)
         })
 
-        console.log(itemIds);
+       
 
         if(itemIds.includes(payload.id)){
            const fintItem = state.cart.findIndex((item) => item.id === payload.id)
 
-           
-           console.log(fintItem);
 
           state.cart[fintItem].quantity += 1
 
@@ -92,7 +89,31 @@ export const addToCart = (state = initialState, {type, payload}) =>{
                  cart: [payload, ...state.cart]}
         }
 
+        case ActionTypes.ADD_QUANTITY:
+
       
+
+        const addToQuantity = state.cart.findIndex((item) => item.id === payload)
+
+        state.cart[addToQuantity].quantity += 1
+
+
+        return{
+            ...state
+          }
+
+          case ActionTypes.SUBSTRACT_QUANTITY:
+
+    
+
+        const substractQuantity = state.cart.findIndex((item) => item.id === payload)
+
+        state.cart[substractQuantity].quantity -= 1
+
+
+        return{
+            ...state
+          }
 
      
 

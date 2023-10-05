@@ -8,7 +8,7 @@ import '../Style/Card.scss'
 import { useFetcher } from 'react-router-dom'
 
 
-function Card({name, price, image, id, quantity}) {
+function Card({name, price, image, id, quantity, open}) {
 
     
 const dispatch = useDispatch()
@@ -20,6 +20,7 @@ const [isVisible, setIsVisible] = useState()
 
 
 
+
 useEffect(() =>{
   setIsVisible(isOnline)
 },[isOnline])
@@ -27,7 +28,7 @@ useEffect(() =>{
 
 const buyItem = () =>{
 
-  
+  open()
 
     dispatch(addToCart({name, price, image, id, quantity}))
   

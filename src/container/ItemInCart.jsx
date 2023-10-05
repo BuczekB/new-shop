@@ -37,6 +37,7 @@ function ItemInCart({name, price, image, quantity, id}) {
       <div className='itemInCart'>
         <div>
         <img src={image} alt=''></img> 
+        <label className='imageLabel'>{name}</label>
         </div> 
          <div>
           <button className='+' onClick={addOrSubtract}>+</button>

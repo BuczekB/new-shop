@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+
 import { useSelector } from 'react-redux/es/hooks/useSelector'
 
 import '../Style/Cart.scss'

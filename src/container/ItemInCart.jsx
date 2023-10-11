@@ -35,7 +35,7 @@ function ItemInCart({name, price, image, quantity, id}) {
   
     return (
       <div className='itemInCart'>
-        <div>
+        <div className='imageBox'>
         <img src={image} alt=''></img> 
         <label className='imageLabel'>{name}</label>
         </div> 

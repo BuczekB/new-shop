@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import { useSelector } from "react-redux/es/hooks/useSelector"
 
 import InfoAboutBuy from './InfoAboutBuy'
@@ -12,15 +12,19 @@ import '../Style/Shop.scss'
 function Shop() {
 
    const [isTruOrFalse, setIsTruOrFalse] = useState(false)
+   const [singleItem, setSingleItem] = useState({})
 
    const products =  useSelector((state) => state.allProducts.products)
 
 
-   const openInfoWindow = () =>{
+   const openInfoWindow = (payload) =>{
     setIsTruOrFalse(!isTruOrFalse)
+    setSingleItem(payload)
    }
-    
+
   
+    
+
    
     const listOfProducts =  products.map( (item) =>{
       return(
@@ -33,7 +37,7 @@ function Shop() {
 
     return (
       <div className="shopContainer">
-          <InfoAboutBuy isTruOrFalse={isTruOrFalse} ></InfoAboutBuy>
+          <InfoAboutBuy isTruOrFalse={isTruOrFalse} openInfoWindow={openInfoWindow} singleItem={singleItem} ></InfoAboutBuy>
        {listOfProducts}
       </div>
     )

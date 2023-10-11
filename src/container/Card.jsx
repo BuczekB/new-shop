@@ -28,7 +28,9 @@ useEffect(() =>{
 
 const buyItem = () =>{
 
-  open()
+  
+
+  open({name, price, image, id, quantity})
 
     dispatch(addToCart({name, price, image, id, quantity}))
   

@@ -1,14 +1,20 @@
+
+
 .infoAboutBuyContainer{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 30vw;
-    height: 60vh;
+    height: auto;
     background-color: aliceblue;
     border: solid black 2px;
     box-shadow: 5px 5px 10px black;
     color: black;
+
+    h2{
+        margin: 0;
+    }
 
     .infoImageBox{
         display: flex;
@@ -16,7 +22,7 @@
         justify-content: center;
         align-items: center;
         img{
-            width: 10rem;
+            width: 12vw;
             height: auto;
             background-position: cover;
         }
@@ -29,23 +35,25 @@
     
 
     .exit{
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 2rem;
+        height: 2rem;
         position: absolute;
-        right: 5%;
-        top: 5%;
-        
+        right: 2%;
+        top: 2%;
+        margin: 0;
     }
 
     button{
-        width: 10rem;
-        height: 3rem;
+        width: 12vw;
+        height: 6vh;
         color: white;
         font-weight: bold;
         text-shadow: 1px 1px 1px black;
         border: none;
         border-radius: 5px;
         transition: ease-in-out .3 ;
+        margin-top: 2vh;
+        margin-bottom: 2vh;
 
         &:hover{
             cursor: pointer;
@@ -57,4 +65,51 @@
 
 .off{
     display: none;
+}
+
+
+@media only screen and (max-width: 1200px) {
+
+    .infoAboutBuyContainer{
+        width: 40vw;
+        .infoImageBox{
+            img{
+                width: 18vw;
+            }
+        }
+        button{
+            width: 18vw;
+        }
+    }    
+
+}
+
+@media only screen and (max-width: 800px) {
+    .infoAboutBuyContainer{
+        width: 50vw;
+        .infoImageBox{
+            img{
+                width: 22vw;
+            }
+        }
+        button{
+            width: 18vw;
+        }
+        .exit{
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }    
+   
+}
+
+@media only screen and (max-width: 768px) {
+   
+}
+
+@media only screen and (max-width: 600px) {
+
+   
+    
+    
 }

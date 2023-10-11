@@ -35,3 +35,16 @@
        font-weight: bold;
     }
 }
+
+@media only screen and (max-width: 900px) {
+    .itemInCart{
+        
+
+        .imageBox{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

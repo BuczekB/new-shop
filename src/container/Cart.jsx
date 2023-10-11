@@ -55,18 +55,22 @@ function Cart() {
           </div>
        </div>
        <div className='summaryBox'>
-          <h2 className='headingSummaryBox'>Order Summary</h2>
-          <div className='totalBox'>
-            <span>Items {cartBox.length}</span>
-            <span>$ {summaryPrice}</span>
+          <div className='totalContainer'>
+            <h2 className='headingSummaryBox'>Order Summary</h2>
+            <div className='totalBox'>
+                <span>Items {cartBox.length}</span>
+                <span>$ {summaryPrice}</span>
+            </div>
           </div>
           <div className='promoBox'>
-          <span className='hederPromo'>Promo Code</span>
-          <input className='promoInput'></input>
-          <button className='promoButton'>APPLY</button>
-          </div>
-          <div className='checkBox'>
-          <button className='checkButton'>Checkout</button>
+          <div>
+            <span className='hederPromo'>Promo Code</span>
+            <input className='promoInput'></input>
+                <button className='promoButton'>APPLY</button>
+            </div>
+            <div className='checkBox'>
+               <button className='checkButton'>Checkout</button>
+            </div>
           </div>
        </div>
       </div>

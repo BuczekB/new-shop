@@ -1,44 +1,71 @@
 import {useState, useEffect} from 'react'
-import {Link} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 
 import newImage from '../image/watch.jpg'
 
 
 import '../Style/InfoAboutBuy.scss'
 
-function InfoAboutBuy(isTruOrFalse) {
+function InfoAboutBuy({isTruOrFalse, openInfoWindow, singleItem}) {
 
 
 const [toggle, setToggle] = useState(false)
+const navigate = useNavigate()
+
+const [itemData, setItemData]= useState({
+  name: '',
+  quantity: 0 ,
+  price: 0,
+  image: ''
+})
+
 
 
 const showOrHide = () =>{
+ 
         setToggle(false)
+        openInfoWindow()
+      
 }
 
+const goToCart = () =>{
+  navigate('/Cart')
+}
+
+
+
+
 useEffect(() =>{
-    if(isTruOrFalse){
-        setToggle(true)
+  
+  if(isTruOrFalse){
+    setToggle(true)
+    const resetInputs = {
+      name: singleItem.name,
+      quantity: singleItem.quantity ,
+      price: singleItem.price,
+      image: singleItem.image
     }
+
+    setItemData(resetInputs)
+  }
+  
 },[isTruOrFalse])
-    
+
     return (
       <div className={toggle? '' : 'off'}>
         <div className='infoAboutBuyContainer' >
         <h1>Added To Cart</h1>
         <div className='infoImageBox'>
-            <img src={newImage}></img>
-            <label>Name: Watch </label>
+            <img src={itemData.image}></img>
+            <label>Name: {itemData.name} </label>
         </div>
         <div>
-        <h2>Quantity: 1</h2>
-        <h2>Price: 12$</h2>
+        <h2>Quantity:  {itemData.quantity}$</h2>
+        <h2>Price:  {itemData.price}$</h2>
         </div>
-        <Link to='/Cart'>
-        <button >
+        <button onClick={goToCart} >
             Go To Cart
         </button>
-        </Link>
         <button onClick={showOrHide} className='exit'>X</button>
         
       </div>

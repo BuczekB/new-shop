@@ -1,39 +1,37 @@
-
+import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux/es/hooks/useSelector'
+
+import { deleteItems } from '../redux/actions/productActions'
 
 import '../Style/Cart.scss'
 
 import ItemInCart from './ItemInCart'
+import { useState } from 'react'
 
 
 function Cart() {
 
     const cartProduct = useSelector((state) => state.addToCart.cart)
+    const dispatch = useDispatch()
 
+    const [alert, setAlert] = useState(false)
    
-    
-    const summaryArray = cartProduct.map((item) =>{
-      
+    const summaryArray = cartProduct.map((item) =>{      
       return( item.price)
-      
     })
-
-
     const summaryPrice = summaryArray.reduce((total , amount) => total + amount, 0)
 
-   
-    
-    
-
     const cartBox = cartProduct.map((item) =>{
-
-     
-
       return(
        <ItemInCart key={item.name} name={item.name} price={item.price} image={item.image} id={item.id} quantity={item.quantity}>
        </ItemInCart>
       )
     })
+
+    const removeItemFromCart = () =>{
+     dispatch(deleteItems())
+     setAlert(true)
+    }  
 
     
 
@@ -69,10 +67,14 @@ function Cart() {
                 <button className='promoButton'>APPLY</button>
             </div>
             <div className='checkBox'>
-               <button className='checkButton'>Checkout</button>
+               <button onClick={removeItemFromCart} className='checkButton'>Checkout</button>
             </div>
           </div>
        </div>
+       <div className={alert? 'checkoutAlert' : 'off'}>
+        <h4>Payment coming soon</h4>
+        <button onClick={() => {setAlert(false)}} className='checkoutExit'>X</button>
+        </div>
       </div>
     )
   }

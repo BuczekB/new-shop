@@ -57,6 +57,14 @@ export const substractQuantity = (payload) =>{
     }
 }
 
+export const deleteItems = (payload) =>{
+    return{
+        type: ActionTypes.DELETE_ITEMS,
+        payload: payload
+    }
+}
+
+
 
 
 

@@ -8,8 +8,7 @@ const reducers = combineReducers({
     allProducts: productReducer,
     product: selectedProductReducer,
     addToCart: addToCart,
-    isAdminLogged: isAdminLogged
-   
+    isAdminLogged: isAdminLogged 
 })
 
 

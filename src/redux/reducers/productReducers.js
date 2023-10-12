@@ -115,6 +115,12 @@ export const addToCart = (state = initialState, {type, payload}) =>{
             ...state
           }
 
+
+          case ActionTypes.DELETE_ITEMS:
+            return{
+                ...state,
+                 cart: []}
+        
      
 
         default:

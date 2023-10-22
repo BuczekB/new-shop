@@ -14,6 +14,7 @@ function Navigation() {
 
   const dispatch = useDispatch()
   const isOnline = useSelector((state) => state.isAdminLogged.isLogged)
+  console.log(isOnline, 'isOnline');
 
   const navigate = useNavigate()
 

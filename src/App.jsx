@@ -29,6 +29,7 @@ function App() {
     </Routes>
     <FetchData></FetchData>
    </Router>
+   <h1>itjusttest</h1>
     </div>
   )
 }

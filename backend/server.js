@@ -5,7 +5,7 @@ const Product = require('./models/productModel')
 const cors = require('cors')
 
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 10000
 const MONGO_URL = process.env.MONGO_URL
 
 const app = express();

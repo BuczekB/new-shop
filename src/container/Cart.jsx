@@ -67,7 +67,7 @@ function Cart() {
                 <button className='promoButton'>APPLY</button>
             </div>
             <div className='checkBox'>
-               <button onClick={removeItemFromCart} className='checkButton'>Checkout</button>
+               <button data-testId='delete' onClick={removeItemFromCart} className='checkButton'>Checkout</button>
             </div>
           </div>
        </div>
@@ -75,6 +75,7 @@ function Cart() {
         <h4>Payment coming soon</h4>
         <button onClick={() => {setAlert(false)}} className='checkoutExit'>X</button>
         </div>
+        <h1>itjusttest</h1>
       </div>
     )
   }

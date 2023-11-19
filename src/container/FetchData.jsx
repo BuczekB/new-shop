@@ -17,7 +17,7 @@ const FetchData = () =>{
     const getData = async () =>{
        
         const response = await axios
-        .get('http://localhost:3000/products')
+        .get('https://new-shop-bzdy.onrender.com/products')
        .catch((err) =>{
             console.log('err', err);
         })

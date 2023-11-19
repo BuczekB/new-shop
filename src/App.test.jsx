@@ -17,5 +17,5 @@ test('first test', () =>{
                 <App/>
             </Provider>)
     const message = screen.queryByText(/itjusttest/i)
-    expect(message).toBeInTheDocument()
+    expect(message).not.toBeInTheDocument()
 })

@@ -16,7 +16,6 @@ function App() {
 
   return (
     <div className='app'>
-      <HashRouter>
    <Router>
    <Navigation></Navigation>
     <Routes>
@@ -30,7 +29,6 @@ function App() {
     </Routes>
     <FetchData></FetchData>
    </Router>
-   </HashRouter>
     </div>
   )
 }

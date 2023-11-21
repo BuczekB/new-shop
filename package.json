@@ -1,7 +1,7 @@
 {
   "homepage": "http://BuczekB.github.io/new-shop",
   "name": "new-shop",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {

@@ -1,7 +1,7 @@
 
 import './App.scss'
 
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route, HashRouter} from 'react-router-dom'
 
 import FetchData from './container/FetchData.jsx'
 import Navigation from './container/Navigation'
@@ -16,6 +16,7 @@ function App() {
 
   return (
     <div className='app'>
+      <HashRouter>
    <Router>
    <Navigation></Navigation>
     <Routes>
@@ -29,6 +30,7 @@ function App() {
     </Routes>
     <FetchData></FetchData>
    </Router>
+   </HashRouter>
     </div>
   )
 }

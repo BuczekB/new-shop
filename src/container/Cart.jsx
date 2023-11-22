@@ -75,7 +75,6 @@ function Cart() {
         <h4>Payment coming soon</h4>
         <button onClick={() => {setAlert(false)}} className='checkoutExit'>X</button>
         </div>
-        <h1>itjusttest</h1>
       </div>
     )
   }

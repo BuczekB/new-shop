@@ -42,7 +42,7 @@ function Admin() {
     }
 
     if(newItem.name != ''){
-      axios.post('http://localhost:3000/product', {
+      axios.post('https://new-shop-bzdy.onrender.com/product', {
         "name": newItem.name,
         "quantity": 1,
         "price": newItem.price,

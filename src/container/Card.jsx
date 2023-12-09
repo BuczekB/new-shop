@@ -39,7 +39,7 @@ const buyItem = () =>{
 const removeItem = () =>{
   dispatch(deleteProduct({id}))
 
-  axios.delete(`http://localhost:3000/product/${id}`)
+  axios.delete(`https://new-shop-bzdy.onrender.com/product/${id}`)
 }
 
 

@@ -32,13 +32,15 @@ function Shop() {
       )
      })
 
-     
+
+
+    console.log(listOfProducts);
 
 
     return (
       <div className="shopContainer">
           <InfoAboutBuy isTruOrFalse={isTruOrFalse} openInfoWindow={openInfoWindow} singleItem={singleItem} ></InfoAboutBuy>
-       {listOfProducts}
+          {listOfProducts.length ? listOfProducts : <h1>Loading...</h1>}
       </div>
     )
   }

@@ -17,6 +17,7 @@ function App() {
   return (
     <div className='app'>
    <Router>
+   <FetchData></FetchData>
    <Navigation></Navigation>
     <Routes>
     <Route path='/' exact element={<About/>} />
@@ -27,7 +28,6 @@ function App() {
     <Route path='/Cart' exact element={<Cart/>} />
     <Route>404 Not Found</Route>
     </Routes>
-    <FetchData></FetchData>
    </Router>
     </div>
   )

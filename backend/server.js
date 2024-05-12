@@ -7,6 +7,7 @@ const cors = require('cors')
 
 const PORT = process.env.PORT || 10000
 const MONGO_URL = process.env.MONGO_URL
+const URL = process.env.URL
 
 const app = express();
 
@@ -50,7 +51,12 @@ app.delete('/product/:id' , async (req, res) =>{
     }
 })
 
-mongoose.
+
+   
+
+
+
+    mongoose.
 connect(MONGO_URL)
 .then(() =>{
     app.listen(PORT, () =>{

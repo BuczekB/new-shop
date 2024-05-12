@@ -2,7 +2,7 @@
 
 Shop Project
 
-# To run project open console and write 'npm run dev' in folder backend to run backend and do this some in main folder "new-shop'
+# To run project open console and write 'npm run dev' in folder backend to run backend and do this some in main folder "new-shop/src'
 
 # To login as a admin use login and password "admin123"
 

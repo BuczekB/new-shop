@@ -15,6 +15,8 @@ const FetchData = () =>{
   
 
     const getData = async () =>{
+
+        
        
         const response = await axios
         .get('https://new-shop-bzdy.onrender.com/products')
@@ -22,7 +24,10 @@ const FetchData = () =>{
             console.log('err', err);
         })
         dispatch(setProducts(response.data))
-        console.log(response.data, 'response');
+       
+
+
+       
       
     }
     

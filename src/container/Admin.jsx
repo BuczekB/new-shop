@@ -42,6 +42,7 @@ function Admin() {
     }
 
     if(newItem.name != ''){
+      console.log('works');
       axios.post('https://new-shop-bzdy.onrender.com/product', {
         "name": newItem.name,
         "quantity": 1,
